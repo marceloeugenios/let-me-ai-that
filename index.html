@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Let Me AI That For You</title>
+  <meta name="description" content="For everyone who could have just asked an AI.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main>
+    <header>
+      <h1>Let Me <span>AI</span> That For You</h1>
+      <p class="tagline">For everyone who could have just asked.</p>
+    </header>
+
+    <section id="create" hidden>
+      <form id="create-form">
+        <label for="question">Their question</label>
+        <textarea id="question" rows="3" maxlength="2000" required placeholder="How do I center a div?"></textarea>
+        <label for="suggest">Suggest an AI (they can still pick their own)</label>
+        <select id="suggest">
+          <option value="">No suggestion</option>
+        </select>
+        <button type="submit">Make the link</button>
+      </form>
+      <div id="result" hidden>
+        <input id="link" type="text" readonly aria-label="Your link">
+        <button id="copy-link" type="button">Copy link</button>
+        <a id="preview" href="#">Preview</a>
+      </div>
+    </section>
+
+    <section id="pick" hidden>
+      <h2>Which AI do you use?</h2>
+      <p class="question-preview" id="pick-question"></p>
+      <div id="choices" class="choices"></div>
+      <label class="remember"><input type="checkbox" id="remember" checked> Remember my choice</label>
+    </section>
+
+    <section id="play" hidden>
+      <div class="chat">
+        <div class="chat-title" id="chat-title"></div>
+        <div class="chat-input" id="chat-input"><span id="typed"></span><span class="caret"></span><button class="send" id="send" type="button" tabindex="-1" aria-hidden="true">↑</button></div>
+      </div>
+      <div class="pointer" id="pointer"></div>
+      <p class="status" id="status" aria-live="polite"></p>
+      <div id="finish" hidden>
+        <button id="go" type="button"></button>
+      </div>
+      <p class="change"><a href="#" id="change-ai">Use a different AI</a></p>
+    </section>
+  </main>
+  <footer>Not affiliated with any AI company. The question lives only in the link (after the #), so it is never sent to this site's server.</footer>
+  <script src="app.js"></script>
+</body>
+</html>
